@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title>Sentiment Rating</title>
+</head>
+<body>
+    <header></header>
+    <section id="form-container">
+        <form>
+            <h1>How was your experience?</h1>
+            <!-- The #rating-container will most likely be needed for styling the rainbow of choices -->
+            <div id="rating-container"> 
+                <input type="radio" name="rating" class="rating-option" id="rating-1">
+                <input type="radio" name="rating" class="rating-option" id="rating-2">
+                <input type="radio" name="rating" class="rating-option" id="rating-3">
+                <input type="radio" name="rating" class="rating-option" id="rating-4">
+                <input type="radio" name="rating" class="rating-option" id="rating-5">
+            </div>
+            <!-- #Text-rating should have no default text; only update later with JS -->
+            <p id="text-rating"></p>
+        </form>
+    </section>
+    <footer></footer>
+</body>
+</html>
