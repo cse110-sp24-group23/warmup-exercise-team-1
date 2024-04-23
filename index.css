@@ -1,4 +1,56 @@
+/* define variables */
+:root {
+    --piece-arc-length: calc(180deg / 5);
+    --form-container-width: 50%;
+    --rating-container-vertical-margin: 200px;
+}
+
+/* get rid of radio button look */
+.rating-option {
+    display: none;
+}
+
+/* move all rating divs (containing input, img, label) to the same place (top left of container), 
+with a rotation origin at the bottom right corner - for rotating into place later  */
+.rating-div {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 100% 100%;
+}
+
+/* Style for when a rating is hovered over */
+img:hover {
+    /* TODO: change box-shadow to something more fitting - just a prototype for now */
+    box-shadow: 0 0 10px 2px #000;
+}
+
+/* style containers - for form and ratings */
 #form-container {
-    width: 50%;
-    margin: auto;
+    background: gray;
+    height: 100%;
+    width: var(form-container-width);
+    margin: 0 auto;
+}
+
+#rating-container {
+    margin: var(--rating-container-vertical-margin) auto;
+    position: relative;
+}
+
+/* rotate the radio buttons with their images - don't need to rotate rating-1 */
+#rating-2 {
+    transform: rotate(var(--piece-arc-length));
+}
+
+#rating-3 {
+    transform: rotate(calc(2 * var(--piece-arc-length)));
+}
+
+#rating-4 {
+    transform: rotate(calc(3 * var(--piece-arc-length)));
+}
+#rating-5 {
+    transform: rotate(calc(4 * var(--piece-arc-length)));
 }
