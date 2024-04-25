@@ -46,12 +46,15 @@ button {
 }
 /* prototype stylings for proof of concept purposes */
 /* brighten whichever radio button is focused (useful for keyboard based selection) */
-.rating-option:focus + label {
-    filter: brightness(110%);
+.rating-option:focus + label{
+    filter: brightness(90%);
 }
+
+
 /* darken whichever radio button is selected (clicked on) */
 .rating-option:checked + label {
-    filter: brightness(80%);
+    filter: brightness(70%);
+    transition: filter 0.5s ease;
 }
 /* show which radio button is hovered over by mouse */
 .rating-img:hover {
