@@ -32,32 +32,33 @@ button {
 }
 
 .rating-div {
-    /* move all rating divs (containing input, img, label) to the same place (top left of container,
-     with a rotation origin at the bottom right corner - for rotating into place later  */
+    /* move all rating divs containing [input, img, label] to same place (top left of container) */
     position: absolute;
     bottom: 0;
     left: 0;
+    /* put rotation origin at the bottom right corner - for rotating into place later  */
     transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
     /* make sure each div is exactly the dimensions of the image it holds */
     width: var(--rating-img-width);
     /* the div naturally has space for text, which takes up height. Remove this space by setting font size to 0 */
     font-size: 0;
 }
-/* prototype stylings for proof of concept purposes */
-/* brighten whichever radio button is focused (useful for keyboard based selection) */
-.rating-option:focus + label {
-    filter: brightness(110%);
+
+/* prototype styles for proof of concept */
+.rating-div:focus {
+    filter: brightness(1.2);
 }
-/* darken whichever radio button is selected (clicked on) */
-.rating-option:checked + label {
-    filter: brightness(80%);
-}
-/* show which radio button is hovered over by mouse */
+/* show which radio button is hovered over by mouse or focused (by keyboard)*/
 .rating-img:hover {
     /* shift out of arc - bring the pizza piece out of the pie slightly */
     transform: translate(-5%, -2.5%);
 }
 
+/* paragraph tag containing rating of text */
 #text-rating {
     /* put paragraph at bottom of container */
     position: absolute;
