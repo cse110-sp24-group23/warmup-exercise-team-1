@@ -7,6 +7,7 @@
     --rating-container-top-margin: 100px;
     --rating-img-width: 100px;
     --text-rating-width: 20%;
+    --text-rating-font-size: calc(var(--rating-img-width) / 10);
 }
 
 html {
@@ -65,6 +66,8 @@ button {
     width: var(--text-rating-width);
     margin: 0 calc((100% - var(--text-rating-width)) / 2);
     text-align: center;
+    /* set font-size for when it is edited with JS */
+    font-size: var(--text-rating-font-size);
 }
 
 /* container - for form containing ratings */

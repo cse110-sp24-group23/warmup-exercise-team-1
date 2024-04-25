@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
     <title>Sentiment Rating</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
             <!-- The #rating-container will most likely be needed for styling the rainbow of choices -->
             <div id="rating-container"> 
                 <!-- divs group image with label and picture. label allows for radio button selection functionality -->
-                <div id="rating-1" class="rating-div">
+                <div id="rating-1" class="rating-div" onmouseover="hoverHighlight('very negative')">
                     <input type="radio" name="rating" class="rating-option" id="radio-1">
                     <label for="radio-1" id="label-1">
                         <img class="rating-img" src="images_arcs/very-negative.png" alt="very negative">
@@ -21,42 +22,42 @@
                 </div>
                 
 
-                <div id="rating-2" class="rating-div">
+                <div id="rating-2" class="rating-div" onmouseover="hoverHighlight('negative')">
                     <input type="radio" name="rating" class="rating-option" id="radio-2">
                     <label for="radio-2">
                         <img class="rating-img" src="images_arcs/negative.png" alt="negative">
                     </label>
                 </div>
                 
-                <div id="rating-3" class="rating-div">
+                <div id="rating-3" class="rating-div" onmouseover="hoverHighlight('slightly negative')">
                     <input type="radio" name="rating" class="rating-option" id="radio-3">
                     <label for="radio-3">
                         <img class="rating-img" src="images_arcs/slightly-negative.png" alt="slightly negative">
                     </label>
                 </div>
 
-                <div id="rating-4" class="rating-div">
+                <div id="rating-4" class="rating-div" onmouseover="hoverHighlight('slightly negative')">
                     <input type="radio" name="rating" class="rating-option" id="radio-4">
                     <label for="radio-4">
                         <img class="rating-img" src="images_arcs/slightly-positive.png" alt="slightly positive">
                     </label>
                 </div>
                 
-                <div id="rating-5" class="rating-div">
+                <div id="rating-5" class="rating-div" onmouseover="hoverHighlight('positive')">
                     <input type="radio" name="rating" class="rating-option" id="radio-5">
                     <label for="radio-5">
                         <img class="rating-img" src="images_arcs/positive.png" alt="positive">
                     </label>
                 </div>
 
-                <div id="rating-6" class="rating-div">
+                <div id="rating-6" class="rating-div" onmouseover="hoverHighlight('very positive')">
                     <input type="radio" name="rating" class="rating-option" id="radio-6">
                     <label for="radio-6">
                         <img class="rating-img" src="images_arcs/very-positive.png" alt="very positive">
                     </label>
                 </div>
                 <!-- #Text-rating should have no default text; only update later with JS -->
-                <p id="text-rating"></p>
+                <p id="text-rating" class="js-text-rating"></p>
             </div>
             <button>submit</button>
         </form>
