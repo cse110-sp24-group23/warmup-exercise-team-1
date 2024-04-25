@@ -2,40 +2,78 @@
 :root {
     --piece-arc-length: calc(180deg / 5);
     --form-container-width: 50%;
-    --rating-container-vertical-margin: 200px;
+    --rating-container-width: calc(2 * var(--rating-img-width));
+    --rating-container-top-margin: 100px;
+    --page-color: #f9c9ed;
+    --rating-img-width: 400px;
 }
 
-/* get rid of radio button look */
+html {
+    background-color: var(--page-color);
+}
+
+/* get rid of radio button look by making it transparent */
 .rating-option {
-    display: none;
+    opacity: 0;
+    /* Make sure radio buttons don't take up space in rating-divs - for proper rotation later */
+    position: absolute;
+    width: 0;
+    height: 0;
 }
 
-/* move all rating divs (containing input, img, label) to the same place (top left of container), 
-with a rotation origin at the bottom right corner - for rotating into place later  */
+.rating-img {
+    width: var(--rating-img-width);
+}
+
 .rating-div {
-    display: block;
+    /* move all rating divs (containing input, img, label) to the same place (top left of container,
+     with a rotation origin at the bottom right corner - for rotating into place later  */
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     transform-origin: 100% 100%;
+    /* make sure each div is exactly the dimensions of the image it holds */
+    width: var(--rating-img-width);
+    /* the div naturally has space for text, which takes up height. Remove this space by setting font size to 0 */
+    font-size: 0;
 }
 
-/* Style for when a rating is hovered over */
-img:hover {
-    /* TODO: change box-shadow to something more fitting - just a prototype for now */
-    box-shadow: 0 0 10px 2px #000;
+.rating-img:hover {
+    filter: brightness(120%);
 }
 
-/* style containers - for form and ratings */
+/* prototype stylings for proof of concept purposes */
+/* show which radio button is focused (useful for keyboard based selection) */
+.rating-option:focus + label {
+    filter: brightness(120%);
+}
+/* show which radio button is selected (clicked on) */
+.rating-option:checked + label {
+    filter: brightness(80%);
+}
+
+#text-rating {
+    /* put paragraph centered in arch */
+    position: absolute; /* position absolute for steps 1 and 2: */
+    bottom: 0; /* 1. put text in bottom of container */
+    transform: translate(200%, -50%); /* 2. horizontally center text */
+}
+
+/* container - for form containing ratings */
 #form-container {
-    background: gray;
-    height: 100%;
-    width: var(form-container-width);
+    width: 50%;
+    /* form-container must be at least as wide as its contents, + space (10px) for padding */
+    min-width: calc(var(--rating-container-width) + 10px);
     margin: 0 auto;
+    height: 100%;
+    width: var(--form-container-width);
 }
 
+/* container for holding the rating arch */
 #rating-container {
-    margin: var(--rating-container-vertical-margin) auto;
+    height: calc(var(--rating-img-width) + 50px);
+    width: calc(var(--rating-container-width));
+    /* necessary to create some grounding for the .rating-option.  */
     position: relative;
 }
 
