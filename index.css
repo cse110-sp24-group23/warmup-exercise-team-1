@@ -1,4 +1,134 @@
+/* define variables */
+:root {
+    --page-color: #f9c9ed;
+    --piece-arc-degrees: calc(180deg / 6);
+    --form-container-width: 50%;
+    --rating-container-width: calc(2 * var(--rating-img-width));
+    --rating-container-top-margin: 100px;
+    --rating-img-width: 100px;
+    --text-rating-width: 20%;
+}
+
+html {
+    background-color: var(--page-color);
+}
+
+button {
+    margin-top: 20px;
+}
+
+/* get rid of radio button look by making it transparent */
+.rating-option {
+    opacity: 0;
+    /* Make sure radio buttons don't take up space in rating-divs - for proper rotation later */
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.rating-img {
+    width: var(--rating-img-width);
+}
+
+.rating-div {
+    /* move all rating divs (containing input, img, label) to the same place (top left of container,
+     with a rotation origin at the bottom right corner - for rotating into place later  */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: 100% 100%;
+    /* make sure each div is exactly the dimensions of the image it holds */
+    width: var(--rating-img-width);
+    /* the div naturally has space for text, which takes up height. Remove this space by setting font size to 0 */
+    font-size: 0;
+}
+
+/* prototype stylings for proof of concept purposes */
+/* show which radio button is focused (useful for keyboard based selection) */
+.rating-option:focus + label {
+    filter: brightness(120%);
+}
+/* show which radio button is selected (clicked on) */
+.rating-option:checked + label {
+    filter: brightness(80%);
+}
+/* show which radio button is hovered over by mouse */
+.rating-img:hover {
+    filter: brightness(120%);
+}
+
+#text-rating {
+    /* put paragraph at bottom of container */
+    position: absolute;
+    bottom: 0;
+    /* 2. horizontally center paragraph and text */
+    width: var(--text-rating-width);
+    margin: 0 calc((100% - var(--text-rating-width)) / 2);
+    text-align: center;
+}
+
+/* container - for form containing ratings */
 #form-container {
     width: 50%;
-    margin: auto;
+    height: 100%;
+    /* form-container must be at least as wide as its contents, + space (10px) for padding */
+    min-width: calc(var(--rating-container-width) + 10px);
+    /* center form-container within page */
+    width: var(--form-container-width);
+    margin: 10% auto;
+    /* center button and h1 in form-container */
+    text-align: center;
+}
+
+/* container for holding the rating arch */
+#rating-container {
+    height: calc(var(--rating-img-width) + 50px);
+    width: calc(var(--rating-container-width));
+    /* position: relative; is necessary to create some grounding for the .rating-option.  */
+    position: relative;
+    /* center rating-container within form-container */
+    margin: 0 auto;
+}
+
+/* rotate the divs containing [radio, label, image] - don't need to rotate rating-1 */
+#rating-2 {
+    transform: rotate(var(--piece-arc-degrees));
+}
+#rating-3 {
+    transform: rotate(calc(2 * var(--piece-arc-degrees)));
+}
+#rating-4 {
+    transform: rotate(calc(3 * var(--piece-arc-degrees)));
+}
+#rating-5 {
+    transform: rotate(calc(4 * var(--piece-arc-degrees)));
+}
+#rating-6 {
+    transform: rotate(calc(5 * var(--piece-arc-degrees)));
+}
+
+/* Vary size of rating tool based on screen size */
+/* Narrow devices (phones, 320px and up) */
+@media only screen and (min-width: 320px) {
+    :root {
+        --rating-img-width: 150px;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    :root {
+        --rating-img-width: 200px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    :root {
+        --rating-img-width: 300px;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    :root {
+        --rating-img-width: 400px;
+    }
 }
