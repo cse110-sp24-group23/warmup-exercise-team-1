@@ -28,6 +28,8 @@ button {
 
 .rating-img {
     width: var(--rating-img-width);
+    /* Animate translation movement */
+    transition: transform 0.3s ease;
 }
 
 .rating-div {
@@ -42,19 +44,19 @@ button {
     /* the div naturally has space for text, which takes up height. Remove this space by setting font size to 0 */
     font-size: 0;
 }
-
 /* prototype stylings for proof of concept purposes */
-/* show which radio button is focused (useful for keyboard based selection) */
+/* brighten whichever radio button is focused (useful for keyboard based selection) */
 .rating-option:focus + label {
-    filter: brightness(120%);
+    filter: brightness(110%);
 }
-/* show which radio button is selected (clicked on) */
+/* darken whichever radio button is selected (clicked on) */
 .rating-option:checked + label {
     filter: brightness(80%);
 }
 /* show which radio button is hovered over by mouse */
 .rating-img:hover {
-    filter: brightness(120%);
+    /* shift out of arc - bring the pizza piece out of the pie slightly */
+    transform: translate(-5%, -2.5%);
 }
 
 #text-rating {
@@ -93,18 +95,39 @@ button {
 /* rotate the divs containing [radio, label, image] - don't need to rotate rating-1 */
 #rating-2 {
     transform: rotate(var(--piece-arc-degrees));
+    /* handle support for multiple browsers */
+    -ms-transform: rotate(var(--piece-arc-degrees));
+    -moz-transform: rotate(var(--piece-arc-degrees));
+    -webkit-transform: rotate(var(--piece-arc-degrees));
+    -o-transform: rotate(var(--piece-arc-degrees));
 }
 #rating-3 {
     transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(2 * var(--piece-arc-degrees)));
 }
 #rating-4 {
     transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(3 * var(--piece-arc-degrees)));
 }
 #rating-5 {
     transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(4 * var(--piece-arc-degrees)));
 }
 #rating-6 {
     transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(5 * var(--piece-arc-degrees)));
 }
 
 /* Vary size of rating tool based on screen size */
