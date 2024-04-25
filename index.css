@@ -93,18 +93,39 @@ button {
 /* rotate the divs containing [radio, label, image] - don't need to rotate rating-1 */
 #rating-2 {
     transform: rotate(var(--piece-arc-degrees));
+    /* handle support for multiple browsers */
+    -ms-transform: rotate(var(--piece-arc-degrees));
+    -moz-transform: rotate(var(--piece-arc-degrees));
+    -webkit-transform: rotate(var(--piece-arc-degrees));
+    -o-transform: rotate(var(--piece-arc-degrees));
 }
 #rating-3 {
     transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(2 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(2 * var(--piece-arc-degrees)));
 }
 #rating-4 {
     transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(3 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(3 * var(--piece-arc-degrees)));
 }
 #rating-5 {
     transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(4 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(4 * var(--piece-arc-degrees)));
 }
 #rating-6 {
     transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -ms-transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -moz-transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -webkit-transform: rotate(calc(5 * var(--piece-arc-degrees)));
+    -o-transform: rotate(calc(5 * var(--piece-arc-degrees)));
 }
 
 /* Vary size of rating tool based on screen size */
