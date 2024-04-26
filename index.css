@@ -15,7 +15,15 @@ html {
 }
 
 button {
-    margin-top: 50px;
+    margin-top: 60px;
+    background-color: #FAC9B8;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    box-shadow: 0 4px 12px black;
 }
 
 .js-text-rating {
