@@ -15,7 +15,19 @@ html {
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 60px;
+    background-color: #FAC9B8;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    box-shadow: 0 4px 12px black;
+}
+
+.js-text-rating {
+    text-transform: capitalize;
 }
 
 /* get rid of radio button look by making it transparent */
