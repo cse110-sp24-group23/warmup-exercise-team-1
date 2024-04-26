@@ -1,0 +1,10 @@
+/* define variables */
+:root {
+    --page-color: #f9c9ed;
+}
+
+html {
+    background-color: var(--page-color);
+}
+
+

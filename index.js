@@ -58,6 +58,9 @@ function clickRatingDiv(targetDiv, labelText){
     pTag.style.color = "black";
     // update _returnClickedText's prevText to be the newest clicked text
     _putBackClickedText(targetDiv, labelText, pTag)
+
+    const submitButton = document.getElementById('submit-button');
+    submitButton.disabled = false;
 }
 
 

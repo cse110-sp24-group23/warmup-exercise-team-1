@@ -15,7 +15,11 @@ html {
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 50px;
+}
+
+.js-text-rating {
+    text-transform: capitalize;
 }
 
 /* get rid of radio button look by making it transparent */
