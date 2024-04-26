@@ -1,4 +1,4 @@
-/* define variables */
+/* Define variables */
 :root {
     --page-color: #f9c9ed;
     --piece-arc-degrees: calc(180deg / 6);
@@ -14,23 +14,21 @@ html {
     background-color: var(--page-color);
 }
 
+/* Style button for submitting satisfaction rating */
 button {
     margin-top: 60px;
-    background-color: #FAC9B8;
+    background-color: #fac9b8;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
 }
 
-button:hover {
-    box-shadow: 0 4px 12px black;
-}
-
+/* Change the text of the #text-rating paragraph tag to be capitalized */
 .js-text-rating {
     text-transform: capitalize;
 }
 
-/* get rid of radio button look by making it transparent */
+/* Get rid of radio button look by making it transparent */
 .rating-option {
     opacity: 0;
     /* Make sure radio buttons don't take up space in rating-divs - for proper rotation later */
@@ -39,82 +37,91 @@ button:hover {
     height: 0;
 }
 
+/* Smoothly transition the visual effects of hovering and clicking */
 .rating-img {
     width: var(--rating-img-width);
     /* Animate translation movement */
     transition: transform 0.3s ease;
 }
-.js-rating-div{
+.js-rating-div {
+    /* slowly darken/brighten rather than immediately */
     transition: 0.3s ease;
 }
 
+/* Prepare rating-divs for proper rotation */
 .rating-div {
-    /* move all rating divs containing [input, img, label] to same place (top left of container) */
+    /* Move all rating divs containing [input, img, label] to same place (top left of container) */
     position: absolute;
     bottom: 0;
     left: 0;
-    /* put rotation origin at the bottom right corner - for rotating into place later  */
+    /* Put rotation origin at the bottom right corner - for rotating into place later  */
     transform-origin: 100% 100%;
     -ms-transform-origin: 100% 100%;
     -moz-transform-origin: 100% 100%;
     -webkit-transform-origin: 100% 100%;
     -o-transform-origin: 100% 100%;
-    /* make sure each div is exactly the dimensions of the image it holds */
+    /* Make sure each div is exactly the dimensions of the image it holds */
     width: var(--rating-img-width);
-    /* the div naturally has space for text, which takes up height. Remove this space by setting font size to 0 */
+    /* The div naturally has space for text, which takes up height. Remove this space by setting font size to 0 */
     font-size: 0;
 }
 
-/* prototype styles for proof of concept */
+/* Give a box shadow to the button when hovered */
+button:hover {
+    box-shadow: 0 4px 12px black;
+}
+
+/* Show which option is focused by slightly brightening - can't apply same hover styles 
+since imgs can't be hovered, and the div being translated doesn't do anything */
 .rating-div:focus {
     filter: brightness(1.2);
 }
-/* show which radio button is hovered over by mouse or focused (by keyboard)*/
+/* Show which radio button is hovered over by mouse or focused (by keyboard)*/
 .rating-img:hover {
-    /* shift out of arc - bring the pizza piece out of the pie slightly */
+    /* Shift out of arc - bring the pizza piece out of the pie slightly */
     transform: translate(-5%, -2.5%);
 }
 
-/* paragraph tag containing rating of text */
+/* Paragraph tag containing rating of text */
 #text-rating {
-    /* put paragraph at bottom of container */
+    /* Put paragraph at bottom of container */
     position: absolute;
     bottom: 0;
-    /* 2. horizontally center paragraph and text */
+    /* Horizontally center paragraph and text */
     width: var(--text-rating-width);
     margin: 0 calc((100% - var(--text-rating-width)) / 2);
     text-align: center;
-    /* set font-size for when it is edited with JS */
+    /* Set font-size for when it is edited with JS */
     font-size: var(--text-rating-font-size);
 }
 
-/* container - for form containing ratings */
+/* Container - for form containing ratings */
 #form-container {
     width: 50%;
     height: 100%;
     /* form-container must be at least as wide as its contents, + space (10px) for padding */
     min-width: calc(var(--rating-container-width) + 10px);
-    /* center form-container within page */
+    /* Center form-container within page */
     width: var(--form-container-width);
     margin: 10% auto;
-    /* center button and h1 in form-container */
+    /* Center button and h1 in form-container */
     text-align: center;
 }
 
-/* container for holding the rating arch */
+/* Container for holding the rating arch */
 #rating-container {
     height: calc(var(--rating-img-width) + 50px);
     width: calc(var(--rating-container-width));
-    /* position: relative; is necessary to create some grounding for the .rating-option.  */
+    /* Position: relative; is necessary to create some grounding for the .rating-option.  */
     position: relative;
-    /* center rating-container within form-container */
+    /* Center rating-container within form-container */
     margin: 0 auto;
 }
 
-/* rotate the divs containing [radio, label, image] - don't need to rotate rating-1 */
+/* Rotate the divs containing [radio, label, image] - don't need to rotate rating-1 */
 #rating-2 {
     transform: rotate(var(--piece-arc-degrees));
-    /* handle support for multiple browsers */
+    /* Handle support for multiple browsers */
     -ms-transform: rotate(var(--piece-arc-degrees));
     -moz-transform: rotate(var(--piece-arc-degrees));
     -webkit-transform: rotate(var(--piece-arc-degrees));

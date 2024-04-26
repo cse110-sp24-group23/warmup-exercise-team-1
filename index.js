@@ -57,15 +57,28 @@ function clickRatingDiv(targetDiv, labelText){
     pTag.innerText = labelText;
     pTag.style.color = "black";
     // update _returnClickedText's prevText to be the newest clicked text
-    _putBackClickedText(targetDiv, labelText, pTag)
+    _putBackClickedText(targetDiv, labelText, pTag);
 
     const submitButton = document.getElementById('submit-button');
     submitButton.disabled = false;
 }
 
 
+/*
+Given a div, string, and paragraph tag to edit, update the paragraph tag
+with that string once the target div is no longer hovered over.
+In other words, returns center text to last clicked rating after mouse leaves
+Parameters:
+ - targetDiv: the div of class "js-target-div" that is currently hovered over on
+ - labelText: string that denotes the positivity of the previously clicked rating
+ - pTag: the paragraph tag to edit the text of
+Returns:
+ - None (updates HTML/CSS)
+*/
 function _putBackClickedText(targetDiv, prevClickedText, pTag){
+    // select the targetDiv, and whenever the mouse leaves:
     targetDiv.addEventListener('mouseleave', function() {
+        // change the p Tag's text back to the prevClickedText and the color to black
         pTag.innerText = prevClickedText;
         pTag.style.color = "black";
     });
