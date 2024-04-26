@@ -32,6 +32,9 @@ button {
     /* Animate translation movement */
     transition: transform 0.3s ease;
 }
+.js-rating-div{
+    transition: 0.3s ease;
+}
 
 .rating-div {
     /* move all rating divs containing [input, img, label] to same place (top left of container) */
