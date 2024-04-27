@@ -1,10 +1,8 @@
 # User Story
 
-Avery Wong
-
 ## Name:
 
-Daily productivity rating that can be used offline and implemented into her personal coding tracker.
+Avery Wong
 
 ## Wants/needs:
 
