@@ -1,0 +1,3 @@
+# Use of Large Language Models for Questions and Code Generation
+
+In the programming of our project, some of our team members used LLMs like ChatGPT to ask questions about errors, css suggestions, and other random items. In general, we would have it generate code or answer a question, but we would write the code ourselves after seeing the general approach it took. Often it was for inspiration, but we would steer far from its original ideas. This worked quite well overall and helped get over hurdles of being stumped while still allowing for fully flushed out thoughts as opposed to blindlly copying and pasting code. This also helped keep all of our coding style practices that LLMs do not necessarily adhere to.
